@@ -1,0 +1,155 @@
+%！TeX program=lualatex
+
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{comment}
+
+\begin{document}
+\begin{comment}
+现代天文观测中多信使观测已成为常态。除了最传统的可见光探测，亦有其它各个电磁波段的设施，以及 LEGO 和其它
+在建的引力波天文台。来自宇宙的粒子射线是在电磁波外的另一重要信息来源；而在宇宙射线中，中微子由于其稳定、
+电中性的特性使得其能够长距离传播而不发生偏移，其与物质极弱的相互作用也使得在经由特定条件产生后极难再发生
+相互作用，这在高能量的情况下犹为重要，因为高能的 $\gamma$ 射线可能会通过对产生等方式损失照度，而中微子则
+能穿过其产生的活动区域而保留产生时的能量信息\cite{murase2020hidden}。这使得其成为在对活动星系核（AGN）等
+天体的观测中理想的信息源，并且 IceCude 等项目已经取得了成果\cite{icecube2022evidence}。 
+\end{comment}
+\section{中微子观测站}
+全世界范围内有大量的中微子实验正在进行，而相当一部分的探测器只对太阳中微子，大气中微子，和经由核反应人工
+制造的中微子进行探测。只有一部分具有探测宇宙中微子，即来自超新星，活跃星系核等中微子源的中微子的能力。
+下面列举一些至少已经部分完成建造，且已有数据采集的具有宇宙中微子探测能力的探测器。
+
+\subsection{IceCube}
+位于南极的冰立方（IceCube）项目在冰下的探测器由 80 列，每列 60 个数子光学模块（DOM）埋在南极冰盖下 1450m 至
+2450m 处组成。DOM 包含光电倍增管，用于探测穿过冰层的相对论性带电粒子所产生的蓝色和近紫外切伦科夫光
+\cite{abbasi2009icecube}。
+
+IceCube 主要研究能量从 100GeV 到远达 EeV，TeV 范围内的中微子，并具有很高的灵敏度。其主要科学目标是绘制高能中微子
+天空图，这有望同时包含弥散的中微子流和点源。已有相关的成果显示出 IceCube 数据中探测到的中微子点源，如来自
+耀变体 TXS 0506+056 的中微子事件与其伽马射线事件重合\cite{icecube2018neutrino}，以及星系 NGC 1068 作为潜在
+的中微子源\cite{icecube2022evidence}。
+
+\subsection{Super-K}
+位于日本神冈矿山深处的超级神冈探测器（Super-K）核心为一装有 5 万吨高纯水的巨大圆柱形不锈钢罐。探测器设计分
+为内外两个区域，内部探测器包含 32,000 吨水，内壁安装了 11,146 个朝内的50厘米直径的大型光电倍增管，光电阴极覆盖率达
+到40\%，用于精确测量粒子相互作用。外部探测器包围着内部探测器，包含18,000吨水，安装了1,885个朝外的20厘米
+直径的 PMT，其主动否决掉进入的宇宙射线 $\mu$ 子等粒子，同时作为周围岩石产生的中子和伽马射线的被动屏蔽层
+\cite{fukuda2003super}。
+
+Super-K 主要研究 MeV 至 GeV 范围内的中微子，最重要的探测成果是证明了中微子振荡的存在，也即证明了中微子存在
+质量，为标准模型的完善作出了巨大贡献\cite{fukuda1998evidence}。虽然从建成至今尚未观察到超新星爆发事件，但
+Super-K 具备探测的能力，并且还在深测超新星爆发的遗留中微子背景上作出了尝试\cite{kneale2024supernova}。
+
+\subsection{Kamiokande}
+神冈探测器（Kamiokande）是 Super-K 的前身，其已于 1995 年退役。其首次直接观测到来自太阳系外的中微子，
+即来自大麦哲伦星系的超新星SN1987A爆发的中微子事件\cite{hirata1988observation}。
+
+\subsection{KM3NeT}
+
+
+\section{中微子的产生}
+\begin{comment}
+宇宙来源的中微子根据能量等级的不同有着不同的产生机制。其中到达地球的低能中微子绝大多数是源自于太阳，
+其核心的核聚变过程会产生大量的中微子。对于相对更高能量的中微子则产生于太阳系外，而对于高能中微子的起源
+研究还尚不完全，但活跃天体中的高能质子和辐射的相互作用，或是高能质子间的相互作用是一个有力的候选。
+\end{comment}
+
+\subsection{超新星\cite{janka2017neutrino}}
+超新星爆发是宇宙中最强大的MeV中微子源之一。当大质量恒星演化到末期，其核心塌缩形成
+中子星或黑洞时，巨大的引力能被释放出来，其中约99\%的能量是通过中微子的形式带走。
+新形成的中子星的引力束缚能可以通过一个简单的牛顿引力模型来近似估算：
+\begin{equation}
+  E_b \sim E_g \approx 3.6 \times 10^53 \left(\frac{M_{ns}}{1.5 M_\odot}\right)^2 
+  \left(\frac{R_{ns}}{10 \mathrm{km}}\right)^{-1} \mathrm{erg} \label{eq:nsbind}
+\end{equation}
+其中 $R_{ns}$ 和 $M_{ns}$ 分别是中子星的半径和质量。
+在超新星爆发过程中，这部分能量主要以中微子的形式在数十秒的时间内辐射出去。
+\subsubsection{产生机制}
+超新星爆发与中子星形成的过程中，中微子的产生分为多个阶段，来源于不同的物理过程。
+
+主要的过程有电子俘获过程：
+\begin{align}
+e^- + (A, Z) &\to (A, Z-1) + \nu_e \\
+e^- + p &\to n + \nu_e
+\end{align}
+这个过程导致了爆发初期的 $\nu_e$ 闪光。后期的过程有粒子对湮灭过程和核子轫致辐射：
+\begin{align}
+e^- + e^+ &\to \nu + \bar{\nu} \\
+N + N &\to N + N + \nu + \bar{\nu}
+\end{align}
+这些过程在吸积和冷却阶段占据主导地位，是 $\nu_\mu$ 与 $\nu_\tau$ 的主要来源。
+\subsubsection{中微子辐射能谱}
+中微子最终的能谱形状由脱耦区域的物理条件决定。在远处观测到的中微子能谱可以被一个准热谱很好地
+近似 \cite{janka2017neutrino}：
+\begin{equation}
+  f_\alpha(E) \propto \left(\frac{E}{\langle E \rangle}\right)^\alpha
+  e^{-(\alpha + 1) E/\langle E \rangle} \label{eq:nsnuf}
+\end{equation}
+其中 $\langle E \rangle$ 表达平均能量，通常在10-20 MeV的范围内。而 $\alpha$ 表达谱相对于标准费米
+-狄拉克谱的“收缩”程度，可以由下式算出
+\begin{equation}
+  \frac{\langle E^2 \rangle}{\langle E \rangle^2} = \frac{2 + \alpha}{1 + \alpha}
+\end{equation}
+不同味的中微子与物质的相互作用截面不同，它们在不同的半径和温度处脱耦，因此最终形成的能
+谱中，$\langle E \rangle$ 与 $\alpha$ 有不同的取值。
+
+\subsection{活跃星系核}
+活跃星系核（AGN）是目前最有希望的高能（TeV-PeV）中微子源候选者。IceCube合作组已经报道
+了来自西佛（Seyfert）星系 NGC 1068 方向的显著中微子超额，为AGN作为高能中微子源提供了
+关键证据 \cite{icecube2022evidence}。在AGN的中心，超大质量黑洞（SMBH）的强大引力驱动
+着物质的吸积过程，形成了吸积盘、冕以及相对论性喷流等极端物理环境。在这些区
+域，质子等宇宙线被加速到极高能量，并通过与周围的物质或辐射场相互作用产生高能中微子。
+\subsubsection{$p\gamma$过程\cite{kelner2008energy}}
+AGN内部，特别是在辐射场极其强烈的区域，高背景辐射的浓度很可能远超过高能核子的浓度，
+使得与辐射的相互作用相比核子之间的相互作用占据主导。对于 $p\gamma$ 相互作用，产生中
+微子主要通过以下过程：
+\begin{equation}
+  \gamma + p \to n_0 \pi^0 + n_+ \pi^+ n_- \pi^- + ... \label{eq:photonmeson}
+\end{equation}
+即低能辐射光子与质子相互作用后产生 $\pi$ 介子。$\pi$ 介子随后发生衰变产生下一级的产物，可能是 $\gamma$ 光子
+或者轻子。主要的轻子产生过程有
+\begin{equation}
+  \pi^+ \to e^+ + \nu_e,\; \pi^+ \to \mu^+ + \nu_\mu,\; \mu^+ \to e^+ + \nu_e + \bar{\nu}_\mu \label{eq:pgammadecay}
+\end{equation}
+以及它们的反粒子共轭过程。需要注意的是 $\pi^+$ 粒子和 $\pi^-$ 产生具有不同的能量阈值，这使得在不同能段
+产生的轻子能谱会有显著不同。产生轻子的能谱可以统一地表示为
+\begin{equation}
+  \frac{dN_l}{dE_l} = \int f_p(E_p) f_{ph}(\epsilon) \Phi_l(\eta, x) \frac{dE_p}{E_p} d\epsilon \label{eq:pgammaspect}
+\end{equation}
+其中
+\begin{equation}
+  \eta = \frac{4\epsilon E_p}{m^2_p c^4},\;\; x=\frac{E_l}{E_p}
+\end{equation}
+而 $f_p$ 和 $f_{ph}$ 分别是初态质子和光子的分布，$E_p$ 和 $\epsilon$ 分别是初态质子和光子的能量，相应地
+$E_l$ 为我们所关子的产生的轻子的能量。
+描述了单次相互作用的产物能量分布，其具体形式可以通过蒙特卡洛模拟（如 SOPHIA \cite{mucke2000monte}）获得，
+一个拟合的结果为 \cite{kelner2008energy}：
+\begin{equation}
+  \Phi_l = B_l \exp\left(-s_l\left[\ln\left(\frac{x}{x'_-}\right)\right]^{\delta_l}\right) 
+  \times \left[\ln\left(\frac{2}{1+y'^2}\right)\right]^\psi \label{eq:Phi_l}
+\end{equation}
+其中 $B_l$, $\psi$, $s_l$, $\delta_l$ 都是 $\eta$ 的函数，且除 $\psi$ 之外，其它三个参数对不同轻子有
+所区别。而 $x'_\pm$ 则是运动学导出的该解适用的能量范围边界，$y' = \frac{x - x'_-}{x'_+ - x'_-}$。
+各种情况下的参数都可以从 SOPHIA 模拟结果中取得，并且在\cite{kelner2008energy}中已经给出。
+
+\subsubsection{$pp$过程\cite{kelner2006energy}}
+在AGN中气体密度较高的区域，例如吸积盘、尘埃环或致密的云气，高能质子之间的非弹性碰撞同样是产生中微子的重要途径
+\cite{kelner2006energy}。其过程和 $p\gamma$ 现象有所类似，高能质子的非弹性碰撞可能会产生 $\pi$ 介子：
+\begin{equation}
+  p + p \to n_0 \pi^0 + n_+ \pi^+ n_- \pi^- + ... \label{eq:ppmeson}
+\end{equation}
+产生的 $pi$ 介子的能谱可以使用一个描述性的函数来表达：
+\begin{equation}
+  F_\pi(x, E_p) = \frac{dN_\pi}{dx} = \frac{d}{dx} \Phi(x, E_p) \label{eq:phipidef}
+\end{equation}
+其中的 $\Phi(x,E_p)$ 可以通过模型拟合得到，通过 QGSJET 模型有
+\begin{equation}
+  \Phi_{\mathrm{QGSJET}} = - B_\pi \left(\frac{1-x^\alpha}{(1+rx^\alpha)^3}\right)^4 \label{eq:phipiest}
+\end{equation}
+其中 $B_\pi$，$\alpha$，$r$ 都是初态质子质量 $E_p$ 的缓变函数。
+同样地经过介子衰变的路径，并利用计算机模拟可以得到不同的路径下衰变得到的中微子能谱 $F_{\nu_\mu}$，$F_{\nu_e}$
+\cite{kelner2006energy}。最终的中微子能谱通过将产生的 $\pi$ 介子能谱与介子衰变到中微子的能量分布函数进行卷
+积得到，其能谱的具体计算和解析近似已在文献 \cite{kelner2006energy} 中详细给出。
+\bibliographystyle{ieeetr}
+\bibliography{ref}
+\end{document}
