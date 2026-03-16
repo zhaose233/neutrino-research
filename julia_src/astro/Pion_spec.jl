@@ -137,6 +137,27 @@ function get_γ_spec_approx(HNL_spec; E_range=(0, Inf))
   return γ_spec
 end
 
+const s2w = 0.2397
+function get_e_spec_approx(HNL_spec; E_range=(0, Inf))
+  BR = (1 - 4 * s2w + 8 * s2w^2)/4
+  function γ_spec(E)
+    low_b = max(E, E_range[1])
+    prediction = quadgk((E_N) -> HNL_spec(E_N) / (3 * E_N^4) * (11 * E_N^3 - 27 * E_N * E^2 + 16 * E^3) * BR, low_b, E_range[2])[1]
+    return prediction
+  end
+
+  return γ_spec
+end
+
+function get_γ_from_e(e_spec)
+  ϵ_0 = 6.3e-13
+  m_e = 0.000510998951
+  function γ_spec(E)
+    E_e = m_e * sqrt(3 * E / 4 / ϵ_0)
+    return e_spec(E_e) * E_e / E / 2
+  end
+end
+
 # %% read file
 
 lit_ν_spec = readdlm("datas/20220913_Evidence_for_neutrino_emission_from_the_nearby_active_galaxy_NGC_1068_data/resources/Fig4_SED/model_murase_et_al.txt", skipstart=1)
@@ -225,7 +246,7 @@ scatter!(p2, low_γ_obs[:,1], low_γ_obs[:,2],
 scatter!(p2, high_γ_obs[:,1], high_γ_obs[:,2],
         label="γ-ray > 200 GeV")
 
-savefig(p2, "julia_plots/u1.5_gamma.pdf")
+# savefig(p2, "julia_plots/u1.5_gamma.pdf")
 
 # %% constrain U
 
@@ -259,4 +280,31 @@ U_UL_list = zeros(length(m_N_range))
   U_UL_list[i] = get_U_UL(m_N_range[i])
 end
 p3 = plot(m_N_range .* 1e3, U_UL_list, color = :black, framestyle = :box, size=(400,300), label=nothing, xlabel=L"m_N \; \mathrm{(MeV)}", ylabel=L"|U_\mu|^2")
-savefig(p3, "julia_plots/U_UL.pdf")
+# savefig(p3, "julia_plots/U_UL.pdf")
+
+
+# %% approx e
+
+HNL_spec_e = (E) -> 
+  if E < E_interp_min || E > E_interp_max
+    0.0
+  else
+    ν_spec_func(E) * 2 * 10^-1
+  end
+
+e_spec = get_e_spec_approx(HNL_spec_e; E_range=(E_interp_min, E_interp_max))
+
+γ_N_spec = get_γ_from_e(e_spec)
+
+pgfplotsx()
+
+p4 = plot(lit_ν_spec[:,1], lit_ν_spec[:, 2] .* 1e-3, label="Neutrino (Theory)", color = :black, xscale = :log10, yscale = :log10, ylims=(1e-16, 1e-9), xlims=(1e-1,1e5), linestyle = :dot, framestyle = :box, size=(500,400), xlabel=L"E \; \mathrm{(GeV)}", ylabel=L"E^2 \Phi \; (\mathrm{TeV} \;  \mathrm{cm}^{-2} \;  \mathrm{s}^{-1})", legend=:topleft)
+plot!(p4, icecube_spec[:, 1], icecube_spec[:, 2], label="Neutrino (IceCube)", color = :blue)
+plot!(p4, (E) -> e_spec(E) * E^2, label="HNL e", color = :red)
+plot!(p4, (E) -> γ_N_spec(E) * E^2, label="HNL γ", color = :green)
+scatter!(p4, low_γ_obs[:,1], low_γ_obs[:,2],
+        label="γ-ray 0.1 to 100 GeV", color=:green)
+scatter!(p4, high_γ_obs[:,1], high_γ_obs[:,2],
+        label="γ-ray > 200 GeV")
+
+# savefig(p2, "julia_plots/u1.5_gamma.pdf")
