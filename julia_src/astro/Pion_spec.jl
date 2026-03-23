@@ -130,6 +130,7 @@ end
 function get_γ_spec_approx(HNL_spec; E_range=(0, Inf))
   function γ_spec(E)
     low_b = max(E, E_range[1])
+    # prediction = quadgk((E_N) -> HNL_spec(E_N) / E_N, low_b, E_range[2])[1]
     prediction = quadgk((E_N) -> HNL_spec(E_N) * 2 * (E_N - E) / E_N^2, low_b, E_range[2])[1]
     return prediction
   end
@@ -157,6 +158,15 @@ function get_γ_from_e(e_spec)
     return e_spec(E_e) * E_e / E / 2
   end
 end
+
+function get_ρ(m_N)
+  ρ_π =  (M_PI^2 * (M_MU^2 + m_N^2) - (M_MU^2 - m_N^2)^2) * sqrt(λ_func(M_PI^2, M_MU^2, m_N^2)) / (M_MU^2 * (M_PI^2 - M_MU^2)^2)
+  r_N = m_N / M_MU
+  ρ_μ = -r_N^8 + 8*r_N^6 - 24*r_N^4*log(r_N) - 8*r_N^2 + 1
+  return ρ_π + ρ_μ
+end
+
+
 
 # %% read file
 
@@ -231,14 +241,14 @@ HNL_spec = (E) ->
   if E < E_interp_min || E > E_interp_max
     0.0
   else
-    ν_spec_func(E) * 2 * 10^-1.5
+    ν_spec_func(E) * 2 * 10^-2
   end
 
 γ_spec = get_γ_spec_approx(HNL_spec; E_range=(E_interp_min, E_interp_max))
 
 pgfplotsx()
 
-p2 = plot(lit_ν_spec[:,1], lit_ν_spec[:, 2] .* 1e-3, label="Neutrino (Theory)", color = :black, xscale = :log10, yscale = :log10, ylims=(1e-14, 1e-9), xlims=(1e-1,1e5), linestyle = :dot, framestyle = :box, size=(400,300), xlabel=L"E \; \mathrm{(GeV)}", ylabel=L"E^2 \Phi \; (\mathrm{TeV} \;  \mathrm{cm}^{-2} \;  \mathrm{s}^{-1})", legend=:topleft)
+p2 = plot(lit_ν_spec[:,1], lit_ν_spec[:, 2] .* 1e-3, label="Neutrino (Theory)", color = :black, xscale = :log10, yscale = :log10, ylims=(1e-14, 1e-10), xlims=(1e-1,1e5), linestyle = :dot, framestyle = :box, size=(400,300), xlabel=L"E \; \mathrm{(GeV)}", ylabel=L"E^2 \Phi \; (\mathrm{TeV} \;  \mathrm{cm}^{-2} \;  \mathrm{s}^{-1})", legend=:outerright)
 plot!(p2, icecube_spec[:, 1], icecube_spec[:, 2], label="Neutrino (IceCube)", color = :blue)
 plot!(p2, (E) -> γ_spec(E) * E^2, label="HNL γ", color = :red)
 scatter!(p2, low_γ_obs[:,1], low_γ_obs[:,2],
@@ -246,7 +256,7 @@ scatter!(p2, low_γ_obs[:,1], low_γ_obs[:,2],
 scatter!(p2, high_γ_obs[:,1], high_γ_obs[:,2],
         label="γ-ray > 200 GeV")
 
-# savefig(p2, "julia_plots/u1.5_gamma.pdf")
+savefig(p2, "julia_plots/u1.5_gamma.pdf")
 
 # %% constrain U
 
@@ -280,7 +290,7 @@ U_UL_list = zeros(length(m_N_range))
   U_UL_list[i] = get_U_UL(m_N_range[i])
 end
 p3 = plot(m_N_range .* 1e3, U_UL_list, color = :black, framestyle = :box, size=(400,300), label=nothing, xlabel=L"m_N \; \mathrm{(MeV)}", ylabel=L"|U_\mu|^2")
-# savefig(p3, "julia_plots/U_UL.pdf")
+savefig(p3, "julia_plots/U_UL.pdf")
 
 
 # %% approx e
@@ -298,13 +308,13 @@ e_spec = get_e_spec_approx(HNL_spec_e; E_range=(E_interp_min, E_interp_max))
 
 pgfplotsx()
 
-p4 = plot(lit_ν_spec[:,1], lit_ν_spec[:, 2] .* 1e-3, label="Neutrino (Theory)", color = :black, xscale = :log10, yscale = :log10, ylims=(1e-16, 1e-9), xlims=(1e-1,1e5), linestyle = :dot, framestyle = :box, size=(500,400), xlabel=L"E \; \mathrm{(GeV)}", ylabel=L"E^2 \Phi \; (\mathrm{TeV} \;  \mathrm{cm}^{-2} \;  \mathrm{s}^{-1})", legend=:topleft)
+p4 = plot(lit_ν_spec[:,1], lit_ν_spec[:, 2] .* 1e-3, label="Neutrino (Theory)", color = :black, xscale = :log10, yscale = :log10, ylims=(1e-16, 1e-10), xlims=(1e-1,1e5), linestyle = :dot, framestyle = :box, size=(400,300), xlabel=L"E \; \mathrm{(GeV)}", ylabel=L"E^2 \Phi \; (\mathrm{TeV} \;  \mathrm{cm}^{-2} \;  \mathrm{s}^{-1})", legend=:outerright)
 plot!(p4, icecube_spec[:, 1], icecube_spec[:, 2], label="Neutrino (IceCube)", color = :blue)
-plot!(p4, (E) -> e_spec(E) * E^2, label="HNL e", color = :red)
-plot!(p4, (E) -> γ_N_spec(E) * E^2, label="HNL γ", color = :green)
+plot!(p4, (E) -> e_spec(E) * E^2, label="HNL e", color = :green)
+plot!(p4, (E) -> γ_N_spec(E) * E^2, label="HNL γ", color = :red)
 scatter!(p4, low_γ_obs[:,1], low_γ_obs[:,2],
         label="γ-ray 0.1 to 100 GeV", color=:green)
 scatter!(p4, high_γ_obs[:,1], high_γ_obs[:,2],
         label="γ-ray > 200 GeV")
 
-# savefig(p2, "julia_plots/u1.5_gamma.pdf")
+savefig(p4, "julia_plots/u_e_gamma.pdf")
