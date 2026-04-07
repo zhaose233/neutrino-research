@@ -7,3 +7,7 @@
 # *.pdf
 *.synctex.gz
 *.xdv
+*.bcf
+*.out
+*.run.xml
+*.toc
