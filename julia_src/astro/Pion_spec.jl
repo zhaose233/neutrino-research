@@ -254,7 +254,7 @@ plot!(p2, (E) -> γ_spec(E) * E^2, label="HNL γ", color = :red)
 scatter!(p2, low_γ_obs[:,1], low_γ_obs[:,2],
         label="γ-ray 0.1 to 100 GeV", color=:green)
 scatter!(p2, high_γ_obs[:,1], high_γ_obs[:,2],
-        label="γ-ray > 200 GeV")
+        label="γ-ray > 200 GeV", color=:yellow)
 
 savefig(p2, "julia_plots/u1.5_gamma.pdf")
 
@@ -315,6 +315,6 @@ plot!(p4, (E) -> γ_N_spec(E) * E^2, label="HNL γ", color = :red)
 scatter!(p4, low_γ_obs[:,1], low_γ_obs[:,2],
         label="γ-ray 0.1 to 100 GeV", color=:green)
 scatter!(p4, high_γ_obs[:,1], high_γ_obs[:,2],
-        label="γ-ray > 200 GeV")
+        label="γ-ray > 200 GeV", color=:yellow)
 
 savefig(p4, "julia_plots/u_e_gamma.pdf")
