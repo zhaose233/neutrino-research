@@ -735,7 +735,7 @@
 \tl_const:Nn \c__ecnu_name_keywords_tl     { 关键词 }
 \tl_const:Nn \c__ecnu_name_keywordsEN_tl   { Keywords }
 \tl_const:Nn \c__ecnu_colon_tl             { ： }
-\tl_const:Nn \c__ecnu_name_appendix_tl  { 附录 }
+\tl_const:Nn \c__ecnu_name_appendix_tl  { 附录：相关过程的费曼图计算 }
 \tl_const:Nn \c__ecnu_name_acknowledgement_tl  { 致谢 }
 \cs_new_protected:Npn \__ecnu_cover_id:
   {
