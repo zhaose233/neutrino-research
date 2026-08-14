@@ -1,4 +1,4 @@
-Vector k, p1, p2, p3, s;
+Vector k, p1, p2, p3, s, sk;
 Indices nu, mu;
 Symbol sw, me, mN, mmu, p1m, p3m;
 
@@ -6,13 +6,19 @@ Local M2part1 = (g_(1, p2) + me) * g_(1, mu) * (1 - g5_(1)) / 2 * g_(1, p3)* g_(
 Local M2part2 = (g_(2, p1) + mN) * g_(2, mu) * (1 - g5_(2)) / 2 * (g_(2, k) + mmu) * g_(2, nu) * (1 - g5_(2)) / 2;
 Local M2part2new = (g_(2, p1) + mN) * (1 + g5_(2) * g_(2, s))/2 * g_(2, mu) * (1 - g5_(2)) / 2 * (g_(2, k) + mmu) * g_(2, nu) * (1 - g5_(2)) / 2;
 
+Local M2part2new2 = (g_(2, p1) + mN) * (1 + g5_(2) * g_(2, s))/2 * g_(2, mu) * (1 - g5_(2)) / 2 * (g_(2, k) + mmu) * (1 + g5_(2) * g_(2, sk))/2 * g_(2, nu) * (1 - g5_(2)) / 2;
+
+
 Local Mpart = M2part1 * M2part2;
 Local MpartpolN = M2part1 * M2part2new;
+Local MpartpolNpolmu = M2part1 * M2part2new2;
+
 
 trace4, 1;
 trace4, 2;
 
 contract;
+
 
 Print;
 .end

@@ -1,0 +1,23 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 26.07.1-dev ] */
+/* [wxMaxima: input   start ] */
+load(to_poly_solve);
+/* [wxMaxima: input   end   ] */
+/* [wxMaxima: input   start ] */
+declare(m_N, real, m_π, real, m_μ, real);
+assume(m_N + m_μ < m_π, m_N > 0, m_μ > 0, m_π > 0);
+sol1: args(to_poly_solve(sqrt(m_N^2 + p ^2) + sqrt(m_μ^2 + p^2) = m_π, p));
+p_0: radcan(ratsimp(rhs(args(sol1[2])[2][1])));
+
+E_0: radcan(ratsimp(sqrt(m_N^2 + p_0^2)));
+/* [wxMaxima: input   end   ] */
+/* [wxMaxima: input   start ] */
+declare(E_π, real, E_Ν, real);
+assume(E_π > E_N, E_N > 0);
+cθ_sol: radcan(ratsimp(rhs(solve(E_π / m_π * (E_0 + cθ * p_0) = E_N, cθ)[1])));
+
+radcan(ratsimp((p_0 + E_0 * cθ_sol)/sqrt(E_N^2 - m_N^2) * E_π / m_π));
+/* [wxMaxima: input   end   ] */
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 26.07.1-dev"$
