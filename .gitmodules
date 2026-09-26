@@ -1,0 +1,3 @@
+[submodule "GAMERA"]
+	path = GAMERA
+	url = https://github.com/libgamera/GAMERA
