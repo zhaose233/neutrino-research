@@ -626,6 +626,39 @@ plot_options = @pgf {
 
 pgfsave("julia_plots/HNL_to_e_show.pdf", plt3)
 
+# %% different m_N
+E_array = 10 .^ (-1:0.05:6)
+
+π_spec_norm = (E) -> π_spec_GeV(E * 1e-3)
+
+μ_spec = get_μ_spec(π_spec_norm)
+
+m_N_list = range(10.0, 30.0, 21)
+
+@showprogress @threads for m_N in m_N_list
+
+  l_HNL_spec_π_1 = get_HNL_spec(π_spec_norm, 1; m_N = m_N)
+  l_HNL_spec_π_m1 = get_HNL_spec(π_spec_norm, -1; m_N = m_N)
+
+  l_HNL_spec_μ_1 = get_HNL_spec_μ(μ_spec, 1; m_N = m_N)
+  l_HNL_spec_μ_m1 = get_HNL_spec_μ(μ_spec, -1; m_N = m_N)
+
+  l_HNL_all_1 = (E) -> l_HNL_spec_π_1(E) + l_HNL_spec_μ_1(E)
+  l_HNL_all_m1 = (E) -> l_HNL_spec_π_m1(E) + l_HNL_spec_μ_m1(E)
+
+  l_e_spec_1 = get_e_spec(l_HNL_all_1, 1)
+  l_e_spec_m1 = get_e_spec(l_HNL_all_m1, -1)
+
+  l_e_spec_all = (E) -> l_e_spec_1(E) + l_e_spec_m1(E)
+
+  e_spec_v = l_e_spec_all.(E_array .* 1e3)
+
+  df = DataFrame(E=E_array, e_spec=e_spec_v)
+
+  CSV.write("julia_results/e_spec_mN_" * string(m_N) * ".csv", df)
+
+end
+
 # %% constrain U
 
 obs_γ_UL = [low_γ_obs[:, 1:2]; high_γ_obs[:,1:2]]

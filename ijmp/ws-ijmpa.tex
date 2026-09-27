@@ -15,6 +15,7 @@
 \usepackage{siunitx}
 \usepackage{tikz-feynman}
 \usepackage{slashed}
+\usepackage{siunitx}
 
 \usepackage[super]{cite}
 \usepackage{xcolor}
@@ -359,12 +360,19 @@ and the theoretical prediction of neutrino spectrum of NGC 1068 \cite{murase2020
 We use the following fit as a approximation of the pion spectrum
 in NGC 1068
 \begin{equation}
-  \Phi_{\pi^\pm}(E) = \Phi_0 \cdot E^{-\Gamma} \cdot e^{-(E / E_c)^\beta} \label{eq:pion_spec_form}
+  \Phi_{\pi^\pm}(E) = \Phi_0 \cdot \left( \frac{E}{\qty{1}{GeV}}\right)^{-\Gamma} \cdot e^{-(E / E_c)^\beta} \label{eq:pion_spec_form}
 \end{equation}
 Where the best fit, which is visualized in Fig.~\ref{fig:pion_spec_fit_show}, is
 \begin{equation}
-  \Phi_0 = 10^{-11.3} \, \mathrm{GeV}^{-1} \cdot \mathrm{cm}^{-2} \cdot  \mathrm{s}^{-1}, \Gamma = 0.1, E_c = 0.8 \, \mathrm{GeV}, \beta=0.3 \label{eq:pion_spec_par}
+  \Phi_0 = \qty{4.7e-12}{GeV^{-1}.cm^{-2}.s^{-1}}, \Gamma = 0.1, E_c = \qty{6.2}{GeV} , \beta=0.3 \label{eq:pion_spec_par}
 \end{equation}
+By setting $|U_\mu|^2 = 1$ and $m_N = $, we can get the typical
+lifetime of HNL particle discussed at about sub-second region, which
+means when combined with the actual $|U_\mu|^2 \lessapprox  10^{-2}$
+the lifetime is longer than muon by $7 \sim 8$ magnitude, thus we expect
+it to be able to escape into the outer region of AGN core. We refer to the
+parameters of AGN torus model\cite{Lopez_Rodriguez_2015}, for our purpose
+we set the magnetic field strength to \qty{100}{mG}, 
 
 \begin{figure}[t]
   \centerline{\includegraphics{../julia_plots/pion_spec_show.pdf}}
@@ -381,11 +389,20 @@ Where the best fit, which is visualized in Fig.~\ref{fig:pion_spec_fit_show}, is
   Eq.~\ref{eq:pion_spec_form} as source pion spectrum. The polarization
   of muon is omitted. HNL mass is set to $m_N = 10 \, \mathrm{MeV}$, and all HNL
   spectrums are scaled assuming $|U_\mu|^2 = 1$ to better show
-  the physics.}
+  the physics. For $m_N = \qty{10}{MeV}$, right-handed neutrino flux is
+  \numrange{1}{2} magnitude smaller than left-handed one.}
   \label{fig:HNL_spec_show}
   \alttext{HNL specturm from pion and muon decay showcase.}
 \end{figure}
 
+\begin{figure}[t]
+  \centerline{\includegraphics{../julia_plots/HNL_to_e_show.pdf}}
+  \caption{Electron spectrum calculated from the overall HNL spectrums
+  shown in Fig.~\ref{fig:HNL_spec_show}. Different HNL polarizations
+  are shown separately while final electron spectrum is summed over.}
+  \label{fig:HNL_to_e_spec_show}
+  \alttext{HNL specturm from pion and muon decay showcase.}
+\end{figure}
 
 
 % \section{General Appearance}
