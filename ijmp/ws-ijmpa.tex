@@ -15,7 +15,6 @@
 \usepackage{siunitx}
 \usepackage{tikz-feynman}
 \usepackage{slashed}
-\usepackage{siunitx}
 
 \usepackage[super]{cite}
 \usepackage{xcolor}
@@ -33,8 +32,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Research on the Phenomenology of HNLs\\
-  and Possible Signals in Multi-Messenger Observations
+\title{
+  Testing Heavy Neutral Leptons \\
+  with Multi-Messenger Observations of NGC 1068
 }
 
 \author{Liang Wei}
@@ -66,9 +66,11 @@
   attenuated. In this paper, we propose Heavy Neutral Leptons (HNLs) as
   an explanation for this observation. We first review the origin of the HNL framework
   theory, calculate the phenomenological behavior of certain processes
-  related to $p-\gamma$ and $p-p$ neutrino production, and use it to
-  explain the $\gamma$ ray observation of AGN NGC 1068, and several other
-  astronomical observations.
+  related to $p-\gamma$ and $p-p$ neutrino production, and test whether
+  they can account for the observed $\gamma$-ray excess from AGN NGC 1068.
+  We find that the resulting photon flux is at least \numrange{7}{8} orders
+  of magnitude below observational limits, thereby ruling out this channel as
+  the primary origin of the excess.
 \end{abstract}
 
 \keywords{HNL; Inverse Seesaw; multi-messenger; NGC 1068}
@@ -82,7 +84,7 @@ of new signals have become observable. Alongside gravitational waves
 and a wider range of electromagnetic signals, neutrino signals are
 now observed by IceCube, which has recently spotted AGN NGC 1068 as
 a point source of neutrino
-flux around at energies around $\qty{1}{TeV}$ \cite{icecube2022evidence},
+flux at energies around $\qty{1}{TeV}$ \cite{icecube2022evidence},
 and several other experiments, such as
 KM3NeT/ARCA, while still under
 construction, have observed a neutrino signal which possibly has energy
@@ -92,7 +94,7 @@ Furthermore, neutrinos have always been peculiar in Standard Model (SM),
 because its tiny mass, hence extremely weak coupling to the Higgs field, is
 considered somewhat unnatural. This has led the neutrino and the origin of 
 its small mass to be considered a gateway to Beyond Standard Model (BSM) physics, 
-with Heavy Neutral Leptons (HNLs) serving as viable dark matter candidates.
+with Heavy Neutral Leptons (HNLs) serving as viable dark matter candidates.\cite{ASAKA200517, Boyarsky_2019}
 Numerous terrestrial experiments are dedicated to searching for possible signals
 coming from BSM theories.\cite{PhysRevLett.103.241802} Although no definite
 signal has been observed, they do provide a solid constraint on the parameter
@@ -101,20 +103,20 @@ mixing angle with muon neutrino is constrained roughly as $|U_{\mu N}|^2 \lesssi
 \cite{bryman2019constraints}
 
 Moreover, the observed $\gamma$-ray flux of NGC 1068 exceeds theoretical
-predictions based on corona cascade models around \qty{10}{GeV}. This suggests
+predictions based on corona cascade models around \qty{10}{GeV}.\cite{Acciari_2019, murase2020hidden} This suggests
 that the hidden core of NGC 1068 has some process to transport more
 electromagnetic energy out. Axions are one candidate \cite{pant2024constraining};
 another possibility is HNLs, which are discussed in this paper. Before NGC 1068,
 there are already attempts to combine multi-messenger observations
 to constrain BSM theories.\cite{PhysRevLett.58.1490, PhysRevD.94.085012, Magill_2018}
 
-This paper is structured as follows. In Section , we outline the basics of HNL
+This paper is structured as follows. In Section \ref{sec:iss_model}, \ref{sec:HNL_production} and \ref{sec:HNL_decay}, we outline the basics of HNL
 theory originating from neutrino mass, and calculate its phenomenology
-properties, while taking polarization into account. In Section , we investigate
+properties, while taking polarization into account. In Section \ref{sec:HNLs_in_NGC_1068}, we investigate
 the multi-messenger observation results of NGC 1068, try to explain the
-exceeding $\gamma$-ray flux. Conclusions are in Section .
+exceeding $\gamma$-ray flux. Conclusions are in Section \ref{sec:conclusions}.
 
-\section{ISS Model}
+\section{ISS Model}\label{sec:iss_model}
 
 To explain the tiny neutrino masses, several mechanisms known as seesaw
 mechanisms have been proposed. For Type-I Seesaw model, we have
@@ -124,8 +126,8 @@ mechanisms have been proposed. For Type-I Seesaw model, we have
 where $m_D$ is the Dirac mass of neutrino, and $M_R$ is the Majorana mass
 of the added right-handed neutrino field. For a sufficiently natural $m_D$
 and $m_R$, the mixing angle $|U|^2$ is always too small which makes observation
-impossible. However, by introducing another fermionic field, the mass
-matrix becomes
+impossible. However, by introducing another fermionic field in the Inverse Seesaw (ISS),\cite{PhysRevLett.56.561, PhysRevD.34.1642, abada2017flight}
+the mass matrix becomes
 \begin{equation}
   \begin{pmatrix}
     \overline{\nu_L} & \overline{\nu_R^c} & \overline{S^c}
@@ -149,7 +151,7 @@ as a fermion because of the small $\mu$, are
   m_\nu = \mu \frac{m_D^2}{M^2}, \; m_N = M, \; |U|^2 = \frac{m_\nu}{\mu}
 \end{equation}
 
-\section{HNL Production}
+\section{HNL Production}\label{sec:HNL_production}
 
 Such HNL particles interact only through their mixing with SM neutrinos,
 which implies that processes producing SM neutrinos will also produce HNLs,
@@ -158,12 +160,12 @@ provided they are kinematically allowed.
 \subsection{Pion decay}
 Under AGN conditions, $p-p$ and $p-\gamma$ processes are thought
 to be the origin of high energy cosmic rays.\cite{Murase_2023} Those
-processes create a large number of pions, awhose decays subsequently
+processes create a large number of pions, whose decays subsequently
 produce high-energy cosmic rays, including neutrinos and $\gamma$-rays.
 \cite{kelner2006energy}
 
 After introducing HNL particles mixing with SM neutrino, charged pions can decay
-into HNL particles, intermediated by W bosons.
+into HNL particles, intermediated by W bosons.\cite{PhysRevD.24.1232}
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
@@ -243,7 +245,7 @@ modifications arising from HNL mass and helicity separation.
 \end{figure}
 
 \subsection{Muon decay}
-Muons will decay into HNL particles through through a process similar
+Muons will decay into HNL particles through a process similar
 to their decay into $\nu_\mu$. We find the decay width of $\mu^- \to N e^- \bar{\nu}_e$ has the same
 form as the process of $\tau$ decay which has been studied
 \cite{Bondarenko_2018}, since this process is symmetric between
@@ -303,10 +305,10 @@ where $g^{(s)}_N(x)$ is normalized as
   \int^{x^+}_{\frac{m_N}{m_\mu}} dx \sum_{s=\pm 1} g^{(s)}_N(x) = 1
 \end{equation}
 
-\section{HNL Decay}
+\section{HNL Decay}\label{sec:HNL_decay}
 Straightforwardly, HNL particles in the ISS model will exclusively
 decay into other leptons. Possible products are $\nu_\mu e^- e^+$
-and $\nu_\mu \nu_l \bar{\nu}_l$. These processes have been well studied\cite{Bondarenko_2018};
+and $\nu_\mu \nu_l \bar{\nu}_l$. These processes have been well studied\cite{Bondarenko_2018, Atre_2009, Gorbunov_2007};
 their decay widths are given by
 \begin{align}
   \Gamma_{N \to 3\nu}          & = \frac{G_F^2 m_N^5}{192 \pi^3} \times |U_\mu|^2 \label{eq:HNL_3nu_decay}               \\
@@ -349,7 +351,7 @@ integral is
 \end{align}
 where $y=E/E_N$, and $\theta_W$ no longer appears in this expression.
 
-\section{HNL in NGC 1068}
+\section{HNL in NGC 1068}\label{sec:HNLs_in_NGC_1068}
 According to IceCube observations, NGC 1068 has been identified as
 a neutrino point source, and the dominant channel of neutrino production is
 charged pion decay.\cite{murase2020hidden} By combining the
@@ -392,7 +394,7 @@ shown in Fig.~\ref{fig:gamma_show_compare}.
   of muon is omitted. HNL mass is set to $m_N = 10 \, \mathrm{MeV}$, and all HNL
   spectrums are scaled assuming $|U_\mu|^2 = 1$ to better show
   the physics. For $m_N = \qty{10}{MeV}$, right-handed neutrino flux is
-  \numrange{1}{2} orders of magnitudes smaller than left-handed one.}
+  \numrange{1}{2} orders of magnitude smaller than left-handed one.}
   \label{fig:HNL_spec_show}
   \alttext{HNL spectrum from pion and muon decay showcase.}
 \end{figure}
@@ -402,14 +404,14 @@ shown in Fig.~\ref{fig:gamma_show_compare}.
   \caption{Possible HNL generated photon spectrum compared with observations.
   $m_N = \qtyrange{10}{30}{MeV}$ is shown as a range.
   Even ignoring the mixing angle, which is smaller than $10^{-4}$,
-  the flux is \numrange{3}{4} orders of magnitudes smaller than the observational upper limit,
-  which means it is at least \numrange{7}{8} magnitudes smaller and therefore
+  the flux is \numrange{3}{4} orders of magnitude smaller than the observational upper limit,
+  which means it is at least \numrange{7}{8} orders of magnitude smaller and therefore
   can be completely ignored in observation.}
   \label{fig:gamma_show_compare}
-  \alttext{HNL specturm from pion and muon decay showcase.}
+  \alttext{HNL $\gamma$-ray flux compared with observations.}
 \end{figure}
 
-\section{Conclusions}
+\section{Conclusions}\label{sec:conclusions}
 In this article, we carefully calculated the production and decay
 processes of HNL particle, assuming it has a mixing angle with muon
 neutrino. For $\pi^\pm \to N + \mu^\pm$ and $\mu^\pm \to N + e^\pm + \bar{\nu}_e$,
@@ -429,16 +431,6 @@ observations, the phenomenological framework remains valuable for future studies
 We thank ECNU for institutional and infrastructural support,
 and we thank the contributors to the open-source tools used in this study,
 including Maxima, FORM, Julia, etc.
-
-
-% \begin{figure}[t]
-%   \centerline{\includegraphics{../julia_plots/HNL_to_e_show.pdf}}
-%   \caption{Electron spectrum calculated from the overall HNL spectrums
-%   shown in Fig.~\ref{fig:HNL_spec_show}. Different HNL polarizations
-%   are shown separately while final electron spectrum is summed over.}
-%   \label{fig:HNL_to_e_spec_show}
-%   \alttext{HNL specturm from pion and muon decay showcase.}
-% \end{figure}
 
 \bibliographystyle{ws-ijmpa}
 \bibliography{ref}

@@ -695,6 +695,23 @@ plot!(pe, E_γs, γ_ϕs_min .* (E_γs .^ 2), label=L"$\gamma$")
 # %% Plot gamma show case
 
 push!(PGFPlotsX.CUSTOM_PREAMBLE, raw"\usepgfplotslibrary{fillbetween}")
+push!(PGFPlotsX.CUSTOM_PREAMBLE, raw"""
+\usetikzlibrary{arrows.meta}
+
+\pgfdeclareplotmark{uplim_arrow}{
+    \pgfsetlinewidth{0.8pt}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{0pt}{-6pt}}
+    \pgfusepathqstroke
+    \pgfpathcircle{\pgfqpoint{0pt}{0pt}}{0.8}
+    \pgfpathmoveto{\pgfqpoint{0pt}{-11pt}}
+    \pgfpathlineto{\pgfqpoint{-3.8pt}{-6pt}}
+    \pgfpathlineto{\pgfqpoint{3.8pt}{-6pt}}
+    \pgfpathclose
+    \pgfusepathqfillstroke
+}
+""")
+
 plt4 = @pgf LogLogAxis(
     {
     width = "8.5cm",
@@ -787,6 +804,7 @@ plot_options = @pgf {
 @pgf push!(plt4, LegendEntry(L"$\gamma$ 4FGL-DR2"))
 plot_options = @pgf {
     "forget plot",
+    mark = "uplim_arrow",
     only_marks,
     mark_size = "0.8pt",
     color = palette[3],
@@ -808,6 +826,7 @@ plot_options = @pgf {
 
 plot_options = @pgf {
     only_marks,
+    mark = "uplim_arrow",
     mark_size = "0.8pt",
     color = palette[1],
     "error bars/x dir" = "both",
