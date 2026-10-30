@@ -75,11 +75,12 @@ $N \to \nu_\mu + e^+ + e^-$ decay channel and evaluate its secondary
 electromagnetic emission. We find that the predicted photon flux is at least
 \numrange{7}{8} orders of magnitude below the observational upper limits
 once experimental bounds on $|U_{\mu N}|^2$ are applied, which excludes
-this HNL channel as the origin of the $\gamma$-ray excess. Even under the
-optimistic assumption that all HNLs decay in the emission region, the
-conclusion is unchanged; a more complete treatment of transport would only
-strengthen the exclusion. The polarization-resolved framework developed
-here is, however, applicable to broader studies.
+this HNL channel as the origin of the $\gamma$-ray excess. The 
+polarization-tracking framework developed in this work is 
+applicable not only to astrophysical studies but may also 
+provide useful theoretical input for decay simulations, 
+detection-efficiency analyses, and mass reconstruction in 
+future accelerator-based HNL searches.
 \end{abstract}
 
 \keywords{HNL; Inverse Seesaw; multi-messenger; NGC 1068}
@@ -132,32 +133,14 @@ axion-like particles, have been studied separately for
 NGC 1068,\cite{pant2024constraining} and we do not attempt a comparative
 survey here.
 
-A dedicated calculation is therefore required. A quantitative statement
-cannot rely on the massless-neutrino approximation: for $m_N$ in the
-\qtyrange{10}{30}{MeV} range the HNL is non-relativistic in the parent rest
-frame, phase-space suppression is significant, and the helicity produced in
-the weak decay is redistributed by the boost in a mass-dependent way. This
-is already visible at the production stage: as shown in
-Figs.~(\ref{fig:pion_rest_helicity_dist})--(\ref{fig:muon_decay_spec}) below,
-right-handed HNLs, which are absent in the massless limit, become an
-appreciable fraction of the pion-decay yield as $m_N$ approaches the
-phase-space boundary, and Fig.~(\ref{fig:muon_decay_spec}) shows the same
-effect in muon decay. These polarization states are retained in the
-subsequent decay: the visible channel $N \to \nu_\mu + e^+ + e^-$ inherits
-the helicity through the angular distributions $g_e^{(i)}(x,\cos\theta)$ of
-Eqs.~\eqref{eq:g_e_p2}--\eqref{eq:g_e_p3}, so that the electron spectrum,
-and hence the $\gamma$-ray yield, depends on the polarization of the parent
-HNL. Polarization-resolved treatments of HNL production and decay have been
-developed for accelerator-based HNL searches,\cite{Ballett_2020} but their
-application to an astrophysical source requires a source-specific production
-spectrum and environment. A polarization-resolved treatment is therefore adopted here to convert
-the NGC 1068 multi-messenger data into a quantitative statement about this
-channel, and it also makes the framework reusable for other sources and
-other HNL mass windows.
-
-In this paper we test whether this HNL channel can account for the
-$\gamma$-ray excess of NGC 1068, and we derive the corresponding
-exclusionary constraint on this scenario. We compute the
+For HNLs in the mass range considered here, finite-mass effects and 
+polarization play important roles in their production and decay. 
+A quantitative assessment of their contribution to the observed 
+$\gamma$-ray emission therefore requires a polarization-resolved treatment.
+In this work, we investigate the contribution of HNLs to the $\gamma$-ray 
+emission of NGC 1068 and assess whether this mechanism can account 
+for the observed excess.
+We compute the
 HNL source spectrum from $\pi^\pm \to \mu^\pm + N$ and
 $\mu^\pm \to N + e^\pm + \bar{\nu}_e$, separating the two polarization states
 and boosting to the laboratory frame while tracking the polarization
@@ -183,22 +166,18 @@ summarizes our conclusions.
 
 \section{ISS Model: Parameters and Prerequisites}\label{sec:iss_model}
 
-This section provides the four ingredients needed below: the coupling of
-HNLs to the SM, the allowed ranges of $m_N$ and $|U_{\mu N}|^2$ in the ISS, the
-justification of the single-Dirac approximation, and the visible decay
-channel with its branching ratio. The production and decay calculations of
-Sec.~\ref{sec:HNL_production_decay} and the experimental bound and
-suppression budget of Sec.~\ref{sec:HNLs_in_NGC_1068} rest on them.
-
-\subsection{Coupling}
+% This section provides the four ingredients needed below: the coupling of
+% HNLs to the SM, the allowed ranges of $m_N$ and $|U_{\mu N}|^2$ in the ISS, the
+% justification of the single-Dirac approximation, and the visible decay
+% channel with its branching ratio. The production and decay calculations of
+% Sec.~\ref{sec:HNL_production_decay} and the experimental bound and
+% suppression budget of Sec.~\ref{sec:HNLs_in_NGC_1068} rest on them.
 
 HNLs interact with the SM only through their mixing with the active
 neutrinos. Therefore any process that produces $\nu_\mu$ also produces $N$,
 with a rate multiplied by $|U_{\mu N}|^2$, provided that it is
 kinematically allowed. Section~\ref{sec:HNL_production_decay}
 uses this to compute $N$ production in charged-pion and muon decay chains.
-
-\subsection{ISS and parameter ranges}
 
 In the Type-I seesaw:\cite{mohapatra1980neutrino,minkowski1977mu,yanagida1980horizontal,gellmann2013complexspinorsunifiedtheories,glashow1980future,Casas_2001}
 \begin{equation}
@@ -233,12 +212,10 @@ by the small parameter $\mu$ rather than by a very large $M$, so that for
 comparable neutrino masses the mixing can be larger than in the Type-I case.
 
 For the parameters used here, $|U|^2$ can reach the $10^{-4}$ level: taking
-$m_\nu\sim0.05$~eV and $\mu\sim\mathrm{keV}$ gives
+$m_\nu \sim \qty{0.05}{eV}$ and $\mu \sim \mathrm{keV}$ gives
 $|U|^2=m_\nu/\mu\sim10^{-4}$, while $\mu\ll m_D,M$ is satisfied. This is
-comparable to the experimental bound quoted in Sec.~\ref{sec:intro} and
+comparable to the experimental bound\cite{bryman2019constraints} and
 motivates the benchmark mixing adopted below.
-
-\subsection{Single-Dirac approximation}
 
 For small $\mu$ the heavy states form a nearly degenerate pseudo-Dirac pair.\cite{Das_2013,Deppisch_2015}
 Over the range $m_N \simeq \qtyrange{10}{30}{MeV}$ and $\mu \ll m_D,M$
@@ -247,8 +224,6 @@ production and decay cannot resolve the two states; summing over helicities
 is therefore equivalent to a single Dirac fermion. The helicity-resolved
 calculation of Sec.~\ref{sec:HNL_production_decay}, with $s = \pm 1$, rests on
 this approximation.
-
-\subsection{Decay channels and visible branching ratio}
 
 Because the HNLs considered here are lighter than the pion, their production
 and decay are governed by low-energy weak processes. They decay only into
@@ -278,7 +253,7 @@ convention is used in all three stages below.
 \subsection{Production in pion decay}\label{sec:pion_decay}
 
 The decay $\pi^+ \to \mu^+ + N$ is the HNL analogue of the
-process $\pi^+ \to \mu^+ + \nu_\mu$.\cite{PhysRevD.24.1232}
+process $\pi^+ \to \mu^+ + \nu_\mu$ as shown in Fig.1..\cite{PhysRevD.24.1232}
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
@@ -298,7 +273,7 @@ process $\pi^+ \to \mu^+ + \nu_\mu$.\cite{PhysRevD.24.1232}
   \caption{Feynman diagram of $\pi^+$ decaying into $\mu^+$ and massive HNLs.}
 \end{figure}
 
-By adapting the standard pion-decay calculation, we find that the decay width
+By adapting the standard pion-decay calculation, we can find that the decay width
 to HNL is suppressed by the mixing angle and modified by a kinematic factor:
 \begin{equation}
   \frac{\Gamma_{\pi \to \mu N}}{\Gamma_{\pi \to \mu \nu}} =
@@ -318,6 +293,8 @@ dependence of the subsequent decay. In the pion rest frame we have
   {\Gamma_{(s)}} \sim {(m_\mu^2 + m_N^2) m_\pi^2 - (m_\mu^2 - m_N^2)^2 - s(m_\mu^2 - m_N^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}} \label{eq:hnl_hel_pion}
 \end{equation}
 where $s$ is the polarization of HNL, and $s=+1$ for right-handed polarized HNLs.
+The $m_N$-dependent branching ratio for each polarization state in 
+the pion rest frame is shown in Fig.~\ref{fig:pion_rest_helicity_dist}.
 
 \begin{figure}[t]
   \centerline{\includegraphics{figures/pion_decay_hel_br.pdf}}
@@ -349,13 +326,21 @@ where
 Here we assume $E_\pi \gg m_\pi$ to simplify the boost process.
 This resembles the SM neutrino case\cite{kelner2006energy}, with
 modifications arising from HNL mass and helicity separation.
+The kinematic factor $\cos\theta_r$, illustrated in 
+Fig.~\ref{fig:pion_spec_helicity_flip}, controls the 
+helicity redistribution during the Lorentz boost.
+% while $\cos\theta_r \approx 1$ holds across nearly 
+% the entire energy range for light HNLs (preserving their initial polarization), 
+% larger values of $m_N$ lead to significant helicity flipping.
+
 
 \begin{figure}[t]
   \centerline{\includegraphics{figures/pion_decay_lr.pdf}}
   \caption{Eq.~(\ref{eq:cos_theta_r_pion}) visualized with different
   $m_N$ values. Eq.~(\ref{eq:cos_theta_r_pion}) determines how much
   helicity flip will happen during Lorentz boost. When $m_N$
-  is small $\cos\theta_r \approx 1$, combined with Fig.~(\ref{fig:pion_rest_helicity_dist}),
+  is small, $\cos\theta_r \approx 1$ holds across nearly 
+  the entire energy range, combined with Fig.~\ref{fig:pion_rest_helicity_dist},
   HNLs produced are almost left-handed; as $m_N$
   approaches the edge of phase space, the helicity flip is more
   significant and right-handed HNLs cannot be ignored.}
@@ -382,7 +367,7 @@ The helicity-dependent spectrum of the HNL in the muon rest frame is given by
   \frac{d\Gamma}{dE} = \frac{G_F^2}{24 \pi^3} |U_{\mu N}|^2 \times |\mathbf{p}| \cdot [ & 3 (m_\mu^2 + m_N^2) E - 4 m_\mu E^2 - 2 m_N^2 m_\mu \nonumber                   \\
                                                                                     & - s \cdot |\mathbf{p}| (m_N^2 + 3 m_\mu^2 - 4 m_\mu E) ] \label{eq:mu_HNL_spec}
 \end{align}
-Several examples are plotted in Fig.~(\ref{fig:muon_decay_spec}).
+Several examples are plotted in Fig.~\ref{fig:muon_decay_spec}.
 
 \begin{figure}[t]
   \centerline{\includegraphics{figures/muon_decay_spectrum.pdf}}
@@ -489,7 +474,7 @@ with best-fit values
   \Phi_0 = \qty{4.7e-12}{GeV^{-1}.cm^{-2}.s^{-1}}, \Gamma = 0.1, E_c = \qty{6.2}{GeV} , \beta=0.3 \label{eq:pion_spec_par}
 \end{equation}
 visualized in
-visualized in Fig.~(\ref{fig:pion_spec_fit_show}). The parameters are
+visualized in Fig.~\ref{fig:pion_spec_fit_show}. The parameters are
 obtained by fitting this form to the theoretical neutrino flux of
 Ref.~\cite{murase2020hidden}, since the uncertainties and limited energy
 range of the IceCube data do not by themselves determine the pion spectrum.
@@ -539,16 +524,7 @@ fields), and bremsstrahlung emission from these leptons in the adopted
 environment. Internal $\gamma\gamma$ absorption is neglected as an
 optimistic assumption; including it would further reduce the predicted
 flux. The
-resulting photon spectrum is shown in Fig.~(\ref{fig:gamma_show_compare}).
-
-% We refer to the
-% parameters of the AGN torus model\cite{Lopez_Rodriguez_2015}. For our approximation
-% we set the magnetic field strength to \qty{139}{mG}, dust temperature to \qty{1500}{K},
-% ambient density to \qty{2.30e5}{cm^{-3}}, bolometric luminosity to \qty{9.55e44}{erg . s^{-1}},
-% and assume the electron-photon conversion happens at about \qty{0.4}{pc} away
-% from the AGN core. We use GAMERA to calculate the radiation
-% generated by an input particle spectrum.\cite{Hahn:2016CO} The result is
-% shown in Fig.~(\ref{fig:gamma_show_compare}).
+resulting photon spectrum is shown in Fig.~\ref{fig:gamma_show_compare}.
 
 \begin{figure}[t]
   \centerline{\includegraphics{figures/pion_spec_show.pdf}}
@@ -585,7 +561,7 @@ assumes that all HNLs deposit their visible products in the chosen zone,
 which makes the estimate optimistic rather than fully propagated. The first
 qualification affects the bound only at the same order, and the second can
 only reduce the predicted flux, so the exclusion is conservative. The
-comparison in Fig.~(\ref{fig:gamma_show_compare}) uses the Fermi-LAT
+comparison in Fig.~\ref{fig:gamma_show_compare} uses the Fermi-LAT
 point-source upper limits.\cite{Acciari_2019} Within the range
 $m_N\simeq\qtyrange{10}{30}{MeV}$, the channel is therefore excluded as an
 explanation of the $\gamma$-ray excess, although the laboratory limits on
@@ -616,53 +592,42 @@ $|U_{\mu N}|^2$ are unchanged.
 \end{figure}
 
 \section{Conclusions}\label{sec:conclusions}
-We have presented a polarization-resolved calculation of HNL production and
-decay in the muon-neutrino sector and applied it to the multi-messenger
-observations of NGC 1068. The HNL spectra from
-$\pi^\pm\to N+\mu^\pm$ and $\mu^\pm\to N+e^\pm+\bar{\nu}_e$ were computed
-separately for the two polarization states, boosted to the laboratory frame with
-the mass-dependent polarization redistribution retained, and converted into the
-electron/positron spectrum of the visible decay
-$N\to\nu_\mu+e^+e^-$. The resulting $\gamma$-ray emission, evaluated for a
-representative environment of the source, lies at least \numrange{7}{8}
-orders of magnitude below the observational limits once the laboratory
-constraint on $|U_{\mu N}|^2$ is imposed, and remains \numrange{3}{4} orders
-of magnitude below them even for $|U_{\mu N}|^2=1$. The weakly coupled HNL
-channel is therefore excluded as the origin of the $\gamma$-ray excess. The
-suppression factorizes approximately into the visible branching ratio, the
-fraction of the parent energy transferred to the electron--positron pair,
-the radiative efficiency of the environment, and the mixing-angle
-constraint (Sec.~\ref{sec:comparison}).
 
-The approximations adopted here are conservative---in particular, all HNLs
-are assumed to decay within the adopted emission region---so a more complete
-treatment of transport can only reduce the predicted flux. The mass
-dependence of the laboratory bound on $|U_{\mu N}|^2$ over the
-\qtyrange{10}{30}{MeV} range is a minor residual uncertainty
-(Sec.~\ref{sec:comparison}). The present analysis does not modify the
-laboratory limits on $|U_{\mu N}|^2$, but it converts the multi-messenger
-data of NGC 1068 into an exclusionary constraint on this HNL channel that is
-complementary to laboratory searches.
+In this work, we have investigated whether heavy neutral leptons (HNLs) 
+can provide an energy-transport mechanism to explain the GeV $\gamma$-ray 
+excess observed in NGC 1068. We developed a polarization-resolved 
+framework to calculate HNL production through charged-pion and muon 
+decays, taking into account finite-mass effects and helicity 
+redistribution under Lorentz boosts. The resulting HNL spectra 
+were then used to derive the electron and positron distributions 
+from the visible decay channel ($N\to\nu_\mu e^+e^-$). By incorporating 
+these distributions into a radiation model of NGC 1068, we calculated 
+the associated $\gamma$-ray emission.
 
-The negative result is itself informative. It excludes a well-motivated
-weakly coupled transport channel for the excess and shifts the emphasis to
-alternatives, most notably a refined description of the AGN environment
-underlying current electromagnetic cascade models,\cite{murase2020hidden}
-or energy transport mediated by other weakly interacting particles. The
-polarization-resolved framework is not specific to this source or mass
-window: it applies to any hadronic source in which HNLs are produced, to
-other HNL masses, and to other neutral particles whose visible decay
-products retain polarization information.
+Our results show that, for HNL masses between 10 and 30 MeV, the 
+predicted $\gamma$-ray flux is three to four orders of magnitude 
+below the observational upper limits even when the mixing parameter 
+is artificially set to $|U_{\mu N}|^2 = 1$. With existing laboratory 
+constraints on the mixing parameter imposed, the predicted flux 
+is suppressed by at least seven to eight orders of magnitude relative 
+to these limits. Furthermore, our calculation adopts optimistic 
+assumptions regarding HNL decay and photon escape, so a more realistic 
+treatment of particle transport and attenuation would further reduce 
+the predicted emission. These results indicate that the HNL scenario 
+considered here cannot account for the observed GeV $\gamma$-ray excess in 
+NGC 1068, although they do not impose new constraints on the HNL mixing 
+parameter beyond existing laboratory bounds.
 
-Finally, the helicity-tracking method is directly relevant to
-accelerator-based HNL analyses. Polarization effects have already been
-included in accelerator simulations for the DUNE near
-detector.\cite{Ballett_2020} Polarization-aware decay distributions could
-similarly be incorporated into the displaced-vertex and track reconstruction
-of SHiP\cite{shipcollaboration2019sensitivityshipexperimentheavy}, the LArTPC mass reconstruction\cite{Alves_2025}, 
-and the associated acceptance and likelihood
-calculations. Such inputs could also be used to reinterpret null searches
-and optimize detector geometries.
+Although the predicted electromagnetic contribution is negligible, 
+the polarization-resolved calculation provides a general framework 
+for studying HNL production and decay in other astrophysical environments. 
+The polarization-tracking method may also be relevant to accelerator-based 
+HNL searches, such as those at the DUNE near detector and the proposed SHiP 
+experiment,\cite{Ballett_2020,shipcollaboration2019sensitivityshipexperimentheavy} 
+as well as mass-reconstruction studies using liquid-argon time projection chambers 
+(LArTPCs).\cite{Alves_2025} In particular, polarization-dependent decay 
+distributions could provide useful theoretical input for decay simulations, 
+detector-acceptance calculations, and the reconstruction of HNL decay products.
 
 \section{Acknowledgements}
 
