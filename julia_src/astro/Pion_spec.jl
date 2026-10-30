@@ -758,7 +758,7 @@ plot_options = @pgf {
     line_width = "0.5pt"
 }
 @pgf push!(plt4, Plot(plot_options, Coordinates(E_γs, γ_ϕs_max .* (E_γs .^ 2))))
-@pgf push!(plt4, LegendEntry(L"$\gamma$ HNL ($|U_\mu|^{-2} = 1$)"))
+@pgf push!(plt4, LegendEntry(L"$\gamma$ HNL ($|U_{\mu N}|^{2} = 1$)"))
 
 plot_options = @pgf {
     "forget plot",
