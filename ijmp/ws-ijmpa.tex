@@ -181,7 +181,7 @@ uses this to compute $N$ production in charged-pion and muon decay chains.
 
 In the Type-I seesaw:\cite{mohapatra1980neutrino,minkowski1977mu,yanagida1980horizontal,gellmann2013complexspinorsunifiedtheories,glashow1980future,Casas_2001}
 \begin{equation}
-  m_\nu = \frac{m_D^2}{M_R}, \; m_N = M_R, \; |U|^2 = \left( \frac{m_D}{M_R} \right)^2
+  m_\nu = \frac{m_D^2}{M_R}, \; m_N = M_R, \; |U|^2 = \left( \frac{m_D}{M_R} \right)^2\,.
 \end{equation}
 For an
 observable $M_R$ the mixing is usually too small to be probed. The Inverse
@@ -200,12 +200,12 @@ introduces another fermion field $S$, and the mass matrix reads
     \nu_L^c \\
     \nu_R   \\
     S
-  \end{pmatrix}
+  \end{pmatrix}\,,
 \end{equation}
 where $\mu$ is a small lepton-number-violating mass term.
 For $\mu\ll M$ and $\mu\ll m_D$,
 \begin{equation}
-  m_\nu = \mu \frac{m_D^2}{M^2}, \; m_N = M, \; |U|^2 = \frac{m_\nu}{\mu}
+  m_\nu = \mu \frac{m_D^2}{M^2}, \; m_N = M, \; |U|^2 = \frac{m_\nu}{\mu}\,.
 \end{equation}
 The key point is that the smallness of the light neutrino mass is controlled
 by the small parameter $\mu$ rather than by a very large $M$, so that for
@@ -229,7 +229,7 @@ Because the HNLs considered here are lighter than the pion, their production
 and decay are governed by low-energy weak processes. They decay only into
 leptons: a three-neutrino channel (invisible) and a $\nu_\mu e^+e^-$ channel
 (visible). Section~\ref{sec:visible_decay} gives the explicit value
-$BR \simeq 0.11$, which enters the suppression budget of
+$\operatorname{BR} \simeq 0.11$, which enters the suppression budget of
 Sec.~\ref{sec:comparison}.
 
 \section{Polarization-Resolved HNL Production and Decay}
@@ -239,7 +239,7 @@ Under AGN conditions, high-energy cosmic rays undergo $p-p$ and $p-\gamma$
 interactions, which are thought to be the main sources of secondary
 particles;\cite{Murase_2023} these interactions produce copious pions, whose
 decays subsequently generate high-energy neutrinos and $\gamma$-rays.
-\cite{kelner2006energy} We consider the two primary production channels for
+\cite{kelner2006energy,kelner2008energy} We consider the two primary production channels for
 muon-flavored neutrinos, charged-pion decay and muon decay, and then the
 visible decay of the HNL; polarization is tracked through all three stages.
 
@@ -253,7 +253,7 @@ convention is used in all three stages below.
 \subsection{Production in pion decay}\label{sec:pion_decay}
 
 The decay $\pi^+ \to \mu^+ + N$ is the HNL analogue of the
-process $\pi^+ \to \mu^+ + \nu_\mu$ as shown in Fig.1..\cite{PhysRevD.24.1232}
+process $\pi^+ \to \mu^+ + \nu_\mu$ as shown in Fig.~\ref{fig:feynman_pi}.\cite{PhysRevD.24.1232}
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
@@ -271,18 +271,19 @@ process $\pi^+ \to \mu^+ + \nu_\mu$ as shown in Fig.1..\cite{PhysRevD.24.1232}
     \end{feynman}
   \end{tikzpicture}
   \caption{Feynman diagram of $\pi^+$ decaying into $\mu^+$ and massive HNLs.}
+  \label{fig:feynman_pi}
 \end{figure}
 
 By adapting the standard pion-decay calculation, we can find that the decay width
 to HNL is suppressed by the mixing angle and modified by a kinematic factor:
 \begin{equation}
   \frac{\Gamma_{\pi \to \mu N}}{\Gamma_{\pi \to \mu \nu}} =
-  |U_{\mu N}|^2 \times \rho_\pi (m_N) \label{eq:pion_HNL_rho}
+  |U_{\mu N}|^2 \times \rho_\pi (m_N) \label{eq:pion_HNL_rho}\,,
 \end{equation}
 where
 \begin{align}
-   & \rho_\pi (m_N) = \frac{(m_\pi^2 (m_\mu^2 + m_N^2) - (m_\mu^2 - m_N^2)^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}}{m_\mu^2 (m_\pi^2 - m_\mu^2)^2} \label{eq:rho_pi} \\
-   & \lambda(x, y, z) = x^2 + y^2 + z^2 - 2xy - 2yz - 2zx
+   \rho_\pi (m_N) &= \frac{(m_\pi^2 (m_\mu^2 + m_N^2) - (m_\mu^2 - m_N^2)^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}}{m_\mu^2 (m_\pi^2 - m_\mu^2)^2}\,, \label{eq:rho_pi} \\
+   \lambda(x, y, z) &= x^2 + y^2 + z^2 - 2xy - 2yz - 2zx \,.
 \end{align}
 The function $\rho_\pi$ encodes the phase-space suppression.
 
@@ -290,7 +291,7 @@ The HNL polarization is important because it controls the angular
 dependence of the subsequent decay. In the pion rest frame we have
 \begin{equation}
   % \Gamma_{\pi \to N}^{(s)} \propto (m_\mu^2 + m_N^2) m_\pi^2 - (m_\mu^2 - m_N^2)^2 - s \cdot (m_\mu^2 - m_N^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}
-  {\Gamma_{(s)}} \sim {(m_\mu^2 + m_N^2) m_\pi^2 - (m_\mu^2 - m_N^2)^2 - s(m_\mu^2 - m_N^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}} \label{eq:hnl_hel_pion}
+  {\Gamma_{(s)}} \sim {(m_\mu^2 + m_N^2) m_\pi^2 - (m_\mu^2 - m_N^2)^2 - s(m_\mu^2 - m_N^2) \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}}\,, \label{eq:hnl_hel_pion}
 \end{equation}
 where $s$ is the polarization of HNL, and $s=+1$ for right-handed polarized HNLs.
 The $m_N$-dependent branching ratio for each polarization state in 
@@ -316,13 +317,13 @@ frame induces a mass-dependent polarization redistribution.
 For a pion spectrum $J(E_\pi)$, we get
 \begin{equation}
   % Q_{N}^{(s)}(E_N) = \int_{\frac{E_N}{\lambda^+}}^{\frac{E_N}{\lambda^-}} J(E_\pi) |U_{\mu N}|^2 \rho_\pi \times r_{(s)}(E_\pi, E_N) \times \frac{d E_\pi}{\lambda_{max} E_\pi} \label{eq:hnl_spec_from_pion}
-  Q_{N}^{(s)}(E_N) = \int_{\lambda^-}^{\lambda^+} J(\frac{E_N}{x}) |U_{\mu N}|^2 \rho_\pi \times r_{(s)}(x, E_N) \times \frac{d x}{(\lambda^+ - \lambda^-) \cdot x} \label{eq:hnl_spec_from_pion}
+  Q_{N}^{(s)}(E_N) = \int_{\lambda^-}^{\lambda^+} J(\frac{E_N}{x}) |U_{\mu N}|^2 \rho_\pi \times r_{(s)}(x, E_N) \times \frac{d x}{(\lambda^+ - \lambda^-) \cdot x}\,, \label{eq:hnl_spec_from_pion}
 \end{equation}
 where
 \begin{align}
-   & \lambda^{\pm}       = \frac{m_\pi^2 - m_\mu^2 + m_N^2 \pm \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}}{2 m_\pi^2}       \\
-   & \cos\theta_r        = \frac{x \, (m_\pi^2 - m_\mu^2 + m_N^2) - 2 m_N^2}{x \, \sqrt{(1 - \frac{m_N^2}{E_N^2}) \, \lambda(m_\pi^2, m_\mu^2, m_N^2)}} \label{eq:cos_theta_r_pion}\\
-   & r_{(s)}(x, E_N) = \frac{\Gamma_{(s)}\frac{1 + \cos\theta_r}{2} + \Gamma_{(-s)}\frac{1 - \cos\theta_r}{2}}{\Gamma_{(s)} + \Gamma_{(-s)}}
+   & \lambda^{\pm}       = \frac{m_\pi^2 - m_\mu^2 + m_N^2 \pm \sqrt{\lambda(m_\pi^2, m_\mu^2, m_N^2)}}{2 m_\pi^2}\,,\\
+   & \cos\theta_r        = \frac{x \, (m_\pi^2 - m_\mu^2 + m_N^2) - 2 m_N^2}{x \, \sqrt{(1 - \frac{m_N^2}{E_N^2}) \, \lambda(m_\pi^2, m_\mu^2, m_N^2)}}\,, \label{eq:cos_theta_r_pion}\\
+   & r_{(s)}(x, E_N) = \frac{\Gamma_{(s)}\frac{1 + \cos\theta_r}{2} + \Gamma_{(-s)}\frac{1 - \cos\theta_r}{2}}{\Gamma_{(s)} + \Gamma_{(-s)}}\,.
 \end{align}
 Here we assume $E_\pi \gg m_\pi$ to simplify the boost process.
 This resembles the SM neutrino case\cite{kelner2006energy}, with
@@ -353,20 +354,20 @@ helicity redistribution during the Lorentz boost.
 
 Muons can decay into HNLs via a process analogous to their standard decay
 into $\nu_\mu$. The decay width of $\mu^- \to N e^- \bar{\nu}_e$ has the
-same form as that of the previously studied $\tau$ decay process
+same form as that of the previously studied $\tau$ decay process, 
 \cite{Bondarenko_2018}
 \begin{equation}
-  \frac{\Gamma_{\mu \to N}}{\Gamma_{\mu \to \nu_\mu}} = |U_{\mu N}|^2 \times \rho_\mu(m_N)
+  \frac{\Gamma_{\mu \to N}}{\Gamma_{\mu \to \nu_\mu}} = |U_{\mu N}|^2 \times \rho_\mu(m_N)\,,
 \end{equation}
 where
 \begin{equation}
-  \rho_\mu(m_N) = - r_N^8 + 8 r_N^6 - 24 r_N^4 \ln(r_N) - 8 r_N^2 + 1 \label{eq:rho_mu},\;\;
-  r_N = m_N / m_\mu
+  \rho_\mu(m_N) = - r_N^8 + 8 r_N^6 - 24 r_N^4 \ln(r_N) - 8 r_N^2 + 1 \label{eq:rho_mu},\;
+  r_N = m_N / m_\mu \,.
 \end{equation}
 The helicity-dependent spectrum of the HNL in the muon rest frame is given by
 \begin{align}
   \frac{d\Gamma}{dE} = \frac{G_F^2}{24 \pi^3} |U_{\mu N}|^2 \times |\mathbf{p}| \cdot [ & 3 (m_\mu^2 + m_N^2) E - 4 m_\mu E^2 - 2 m_N^2 m_\mu \nonumber                   \\
-                                                                                    & - s \cdot |\mathbf{p}| (m_N^2 + 3 m_\mu^2 - 4 m_\mu E) ] \label{eq:mu_HNL_spec}
+                                                                                    & - s \cdot |\mathbf{p}| (m_N^2 + 3 m_\mu^2 - 4 m_\mu E) ]\,. \label{eq:mu_HNL_spec}
 \end{align}
 Several examples are plotted in Fig.~\ref{fig:muon_decay_spec}.
 
@@ -391,17 +392,17 @@ interpreted as a demonstrated consequence of complete magnetic
 depolarization in the source. For a given muon spectrum, we have
 \begin{align}
   Q_N^{(s)}(E_N) = \int_{\frac{m_N^2}{m_\mu^2}}^{1} & \frac{d y}{2y} \, Q_\mu(\frac{E_N}{y}) |U_{\mu N}|^2 \rho_\mu \nonumber \cdot \int_{x^-}^{x^+}  \frac{d x}{\sqrt{x^2 - \frac{m_N^2}{m_\mu^2}}} \nonumber \\
-  & \cdot \left(\frac{1 + \cos\theta_r}{2} g_N^{(s)}(x) + \frac{1 - \cos\theta_r}{2} g_N^{(-s)}(x)\right) \label{eq:muon_lab_HNL_spec}
+  & \cdot \left(\frac{1 + \cos\theta_r}{2} g_N^{(s)}(x) + \frac{1 - \cos\theta_r}{2} g_N^{(-s)}(x)\right)\,, \label{eq:muon_lab_HNL_spec}
 \end{align}
 where
 \begin{align}
-  &x^+ = \frac{m_N^2 + m_\mu^2}{2 m_\mu^2}, \; x^- = \frac{1}{2} \left( y + \frac{1}{y} \cdot \frac{m_N^2}{m_\mu^2}\right) \\
-  &\cos\theta_0 = \frac{y - x}{\sqrt{x^2 - \frac{m_N^2}{m_\mu^2}}} \\
-  &\cos\theta_r = \frac{1}{y \, \sqrt{1 - \frac{m_N^2}{E_N^2}}}\left( \sqrt{x^2 - \frac{m_N^2}{m_\mu^2}} + x \cos\theta_0\right)
+  &x^+ = \frac{m_N^2 + m_\mu^2}{2 m_\mu^2}, \; x^- = \frac{1}{2} \left( y + \frac{1}{y} \cdot \frac{m_N^2}{m_\mu^2}\right)\,, \\
+  &\cos\theta_0 = \frac{y - x}{\sqrt{x^2 - \frac{m_N^2}{m_\mu^2}}}\,, \\
+  &\cos\theta_r = \frac{1}{y \, \sqrt{1 - \frac{m_N^2}{E_N^2}}}\left( \sqrt{x^2 - \frac{m_N^2}{m_\mu^2}} + x \cos\theta_0\right)\,,
 \end{align}
 where $g^{(s)}_N(x)$ is normalized as
 \begin{equation}
-  \int^{x^+}_{\frac{m_N}{m_\mu}} dx \sum_{s=\pm 1} g^{(s)}_N(x) = 1
+  \int^{x^+}_{\frac{m_N}{m_\mu}} dx \sum_{s=\pm 1} g^{(s)}_N(x) = 1\,.
 \end{equation}
 
 \subsection{Visible three-body decay}\label{sec:visible_decay}
@@ -412,12 +413,12 @@ $\nu_\mu \nu_l \bar{\nu}_l$. These processes have been well
 studied\cite{Bondarenko_2018, Atre_2009, Gorbunov_2007};
 their decay widths are given by
 \begin{align}
-  \Gamma_{N \to 3\nu}          & = \frac{G_F^2 m_N^5}{192 \pi^3} \times |U_{\mu N}|^2 \label{eq:HNL_3nu_decay}               \\
-  \Gamma_{N \to \nu e \bar{e}} & = \frac{G_F^2 m_N^5}{192 \pi^3} \times |U_{\mu N}|^2 \times C_1^e \label{eq:HNL_nuee_decay}
+  \Gamma_{N \to 3\nu}          & = \frac{G_F^2 m_N^5}{192 \pi^3} \times |U_{\mu N}|^2\,, \label{eq:HNL_3nu_decay}               \\
+  \Gamma_{N \to \nu e \bar{e}} & = \frac{G_F^2 m_N^5}{192 \pi^3} \times |U_{\mu N}|^2 \times C_1^e\,, \label{eq:HNL_nuee_decay}
 \end{align}
 where
 \begin{equation}
-  C_1^e = \frac{1}{4}\left(1 - 4 \sin^2 \theta_W + 8 \sin^4 \theta_W\right)
+  C_1^e = \frac{1}{4}\left(1 - 4 \sin^2 \theta_W + 8 \sin^4 \theta_W\right)\,.
 \end{equation}
 To simplify the problem, we neglect the electron mass. The $3\nu$ final state
 includes all neutrino flavor combinations.
@@ -427,7 +428,7 @@ electromagnetic signal only if its energy is ultimately
 transferred to visible charged particles, thus the branching 
 ratio for an HNL to undergo a visible decay is
 \begin{equation}
-  BR_{N \to \nu e \bar{e}} = \frac{C_1^e}{1 + C_1^e} \approx 0.11
+  \operatorname{BR}_{N \to \nu e \bar{e}} = \frac{C_1^e}{1 + C_1^e} \approx 0.11\,.
 \end{equation}
 This implies a substantial energy loss, since only about one-tenth of the
 HNL decays produce charged leptons.
@@ -435,9 +436,9 @@ HNL decays produce charged leptons.
 The angular and energy distributions of electrons/positrons are
 \begin{align}
   g_e^{(1)}(x, \cos{\theta}) = & \frac{8}{C_1^e} \cdot x^2 \cdot \{ [(4 - 16 s_W^2 + 64 s_W^4) x - (1 - 4 s_W^2 + 28 s_W^4)] \cos{\theta} \nonumber   \\
-                               & - (4 - 16 s_W^2 + 64 s_W^4) x + (3 - 12 s_W^2 + 36 s_W^4) \} \label{eq:g_e_p2}                                       \\
+                               & - (4 - 16 s_W^2 + 64 s_W^4) x + (3 - 12 s_W^2 + 36 s_W^4) \}\,, \label{eq:g_e_p2}                                       \\
   g_e^{(2)}(x, \cos{\theta}) = & \frac{16}{C_1^e} \cdot x^2 \cdot \{ [(6 - 24 s_W^2 + 32 s_W^4) x - (3 - 12 s_W^2 + 14 s_W^4)] \cos{\theta} \nonumber \\
-                               & - (6 - 24 s_W^2 + 32 s_W^4) x + (3 - 12 s_W^2 + 18 s_W^4) \} \label{eq:g_e_p3}
+                               & - (6 - 24 s_W^2 + 32 s_W^4) x + (3 - 12 s_W^2 + 18 s_W^4) \}\,. \label{eq:g_e_p3}
 \end{align}
 Here, $g_e^{(1)}$ and $g_e^{(2)}$ represent the differential 
 distributions for the outgoing electron ($e^-$) and positron 
@@ -445,13 +446,13 @@ distributions for the outgoing electron ($e^-$) and positron
 The angle $\theta$ is defined between the outgoing lepton momentum and the parent HNL spin. 
 To obtain the total injected lepton spectrum, we sum over both $e^-$ and $e^+$:
 \begin{align}
-  Q_e^{(Lab)}(E) = BR_{N \to \nu e \bar{e}} \cdot \int_{E}^{+\infty} &d E_N \, Q_N^{(s)}(E_N) \nonumber \\
-  &\cdot \int_{\frac{E}{2 E_N}}^{\frac{1}{2}}  \frac{d x}{x E_N} \, \sum_{i=1,2} g_e^{(i)}(x, s (\frac{E}{x E_N} - 1))
+  Q_e^{(\mathrm{Lab})}(E) = \operatorname{BR}_{N \to \nu e \bar{e}} \cdot \int_{E}^{+\infty} &d E_N \, Q_N^{(s)}(E_N) \nonumber \\
+  &\cdot \int_{\frac{E}{2 E_N}}^{\frac{1}{2}}  \frac{d x}{x E_N} \, \sum_{i=1,2} g_e^{(i)}(x, s (\frac{E}{x E_N} - 1))\,.
 \end{align}
 Evaluating the angular and energy integrals yields
 \begin{align}
-  Q_e^{(Lab)}(E) = &BR_{N \to \nu e \bar{e}}  \nonumber\\
-                   &\cdot \int_{0}^{1} \frac{d y}{3y} \, Q_N^{(s)}(\frac{E}{y}) [16 y^3 - 27 y^2 + 11 -  s \cdot (32 y^3 - 63 y^2 + 36 y - 5) ]
+  Q_e^{(\mathrm{Lab})}(E) = &\operatorname{BR}_{N \to \nu e \bar{e}}  \nonumber\\
+                   &\cdot \int_{0}^{1} \frac{d y}{3y} \, Q_N^{(s)}(\frac{E}{y}) [16 y^3 - 27 y^2 + 11 -  s \cdot (32 y^3 - 63 y^2 + 36 y - 5) ]\,,
 \end{align}
 where $y = E / E_N$. The dependence on the Weinberg angle $\theta_W$
 cancels in the sum: in the massless limit $m_e \to 0$, helicity-flipping
@@ -468,15 +469,14 @@ neutrino spectrum from pion decays \cite{kelner2006energy} with theoretical
 models of NGC 1068 \cite{murase2020hidden}, we adopt the following
 parameterization for the pion spectrum:
 \begin{equation}
-  \Phi_{\pi^\pm}(E) = \Phi_0 \cdot \left( \frac{E}{\qty{1}{GeV}}\right)^{-\Gamma} \cdot e^{-(E / E_c)^\beta} \label{eq:pion_spec_form}
+  \Phi_{\pi^\pm}(E) = \Phi_0 \cdot \left( \frac{E}{\qty{1}{GeV}}\right)^{-\Gamma} \cdot e^{-(E / E_c)^\beta}\,, \label{eq:pion_spec_form}
 \end{equation}
 with best-fit values
 \begin{equation}
-  \Phi_0 = \qty{4.7e-12}{GeV^{-1}.cm^{-2}.s^{-1}}, \Gamma = 0.1, E_c = \qty{6.2}{GeV} , \beta=0.3 \label{eq:pion_spec_par}
+  \Phi_0 = \qty{4.7e-12}{GeV^{-1}.cm^{-2}.s^{-1}}, \Gamma = 0.1, E_c = \qty{6.2}{GeV} , \beta=0.3\,, \label{eq:pion_spec_par}
 \end{equation}
 visualized in Fig.~\ref{fig:pion_spec_fit_show}. The parameters are
-obtained by fitting this form to the theoretical neutrino flux of
-Ref.~\cite{murase2020hidden}, since the uncertainties and limited energy
+obtained by fitting this form to the theoretical neutrino flux from Ref.~\refcite{murase2020hidden} since the uncertainties and limited energy
 range of the IceCube data do not by themselves determine the pion spectrum.
 This spectrum provides the parent-particle input for the production
 calculation of Sec.~\ref{sec:HNL_production_decay}.
@@ -486,7 +486,7 @@ calculation of Sec.~\ref{sec:HNL_production_decay}.
 For HNLs to mediate energy transport from the opaque core to a transparent
 external environment, their decay length must be sufficiently large. We have
 \begin{equation}
-  l_{dec} = \frac{E_N}{m_N} \, c \, \frac{\hbar}{\Gamma_{tot}} = \frac{192 \pi^3 c \hbar}{G_F^2(1 + C_1^e)} \cdot \frac{E_N}{m_N^6 |U_{\mu N}|^2}
+  l_{dec} = \frac{E_N}{m_N} \, c \, \frac{\hbar}{\Gamma_{tot}} = \frac{192 \pi^3 c \hbar}{G_F^2(1 + C_1^e)} \cdot \frac{E_N}{m_N^6 |U_{\mu N}|^2}\,.
 \end{equation}
 For example, setting $|U_{\mu N}|^2=10^{-5}$, $m_N=\qty{20}{MeV}$, and
 $E_N=\qty{1}{TeV}$ yields $l_{dec}\approx\qty{0.4}{pc}$, which implies that
@@ -509,7 +509,7 @@ the predicted flux and makes the resulting exclusion conservative.
 
 \subsection{Environment and radiation calculation}\label{sec:environment}
 
-We refer to the parameters of the AGN torus model.\cite{Lopez_Rodriguez_2015}
+We refer to the parameters of the AGN torus model in Ref.~\refcite{Lopez_Rodriguez_2015}.
 For our approximation we set the magnetic field
 strength to \qty{139}{mG}, dust temperature to \qty{1500}{K}, ambient
 density to \qty{2.30e5}{cm^{-3}}, and bolometric luminosity to
@@ -517,7 +517,7 @@ density to \qty{2.30e5}{cm^{-3}}, and bolometric luminosity to
 happens at about \qty{0.4}{pc} from the AGN core, corresponding to the
 inner edge of the torus in this model.
 
-The electron/positron source function $Q_e^{(Lab)}(E)$ derived in
+The electron/positron source function $Q_e^{(\mathrm{Lab})}(E)$ derived in
 Sec.~\ref{sec:visible_decay} is injected into GAMERA \cite{Hahn:2016CO},
 which computes synchrotron, inverse-Compton (on the dust and CMB photon
 fields), and bremsstrahlung emission from these leptons in the adopted
@@ -541,7 +541,7 @@ resulting photon spectrum is shown in Fig.~\ref{fig:gamma_show_compare}.
 Setting $|U_{\mu N}|^2 = 1$, the predicted photon flux lies three to four
 orders of magnitude below the observational upper limits. The residual
 suppression arises mainly from the small visible branching ratio
-$BR\simeq0.11$, which contributes about one order of magnitude, and from the
+$\operatorname{BR} \simeq0.11$, which contributes about one order of magnitude, and from the
 fraction of the parent pion or muon energy carried into the visible channel
 together with the radiation efficiency of the adopted environment, which
 account for the remaining orders. The phase-space factors $\rho_\pi,\rho_\mu$ are of order
